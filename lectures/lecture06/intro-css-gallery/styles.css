@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Your code here */
+
+header{
+    background-color: #d67f4a;
+    padding: 40px;
+}
+
+main{
+    background-color: bisque;
+    display: grid;
+
+    grid-template-columns: 33% 33% 33%;
+    padding: 20px;
+    gap: 20px;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    color: darkred;
+}
+
+section{
+
+    background-color: white;
+}
+
+#s1{
+    background-color: red;
+}
+#s2{
+    background-color: orange;
+}#s3{
+    background-color: yellow;
+}#s4{
+    background-color: green;
+}#s5{
+    background-color: blue;
+}#s6{
+    background-color: indigo;
+}#s7{
+    background-color: purple;
+}#s8{
+    background-color: hotpink;
+}#s9{
+    background-color: darkgray;
+}
+
