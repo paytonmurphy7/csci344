@@ -1,0 +1,79 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F4;
+}
+
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.post{
+    min-height: 300px;
+    border: solid 1px black;
+    margin-bottom: 50px; 
+}
+
+.stories{
+    min-height: 100px;
+    border: solid 1px black;
+    margin-bottom: 50px; 
+}
+.suggestions-panel{
+    position: fixed;
+    top: 100px;
+    left: 65vw;
+    background-color: lightblue;
+    min-height: 80vh;
+    width: calc(35vw - 40px);
+}
+
+main{
+    max-width: calc(65vw - 30px);
+    margin-top: 23px;
+    margin-left: 1vw;
+}
+@media (max-width: 800px) {
+    .suggestions-panel{
+        display: none;
+    }
+
+    main {
+        width: auto;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
+
+.story-1 {
+    width: 70px;          /* size of circle */
+    height: 70px;
+    border-radius: 50%;    /* makes it a circle */
+    object-fit: cover;     /* prevents image distortion */
+    position: left;    /* allows positioning */
+    top: 20px;             /* distance from top */
+    right: 20px;           /* distance from right */
+}
+
+.logo{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.sign-out{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:blue
+}

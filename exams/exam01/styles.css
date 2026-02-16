@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+
+/* 3.1 Body */
+body{
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 3.2 Header + nav */
+header{
+    background-color: #222222;
+    height: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+h1{
+    color: white;
+    font-size: 1.2em;
+}
+.a1{
+    color: white;
+    text-decoration: none;
+}
+.a2{
+    color: white;
+    text-decoration: none;
+}
+.a3{
+    color: white;
+    text-decoration: none;
+}
+
+/* 3.3 Custom font */
+h2{
+    font-family: "Tangerine", cursive;
+    font-style: normal;
+    font-size: 40px;
+}
+
+/* 3.4 Main */
+main{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+/* 3.5 Gallery layout */
+section{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 30px;
+    size-adjust: 100px;
+}
+
+/* 3.6 Card styling */
+p{
+    background-color: white;
+    background-size: 40px;
+    border-width: 40px;
+    
+    border-color: grey;
+    /* stuck on how to change the size of the background to fit the image */
+}
+
+
+/* 3.7 Footer */
+footer{
+    background-color: #222222;
+    color: white;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+
+/* 3.8 Media queries */
+@media (max-width: 700px){
+    section{
+        display: table-column-group;
+    }
+}
+/* struggling how to make it so you can only see one column */
