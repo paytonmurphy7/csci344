@@ -11,7 +11,7 @@ export default function Carousel({ photos, galleries }) {
 
     function next() {
         console.log("Next");
-        if (index === 9) {
+        if (index === 2) {
             setIndex(0); 
         } else {
             setIndex(index+1);

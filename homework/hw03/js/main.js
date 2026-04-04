@@ -49,12 +49,12 @@ function postsToHTML(post){
                 <h3 class="text-lg font-Comfortaa font-bold">${post.user.username}</h3>
                 <button class="icon-button"><i class="fas fa-ellipsis-h"></i></button>
             </div>
-            <img src="${post.image_url}" alt="placeholder image" width="300" height="300"
+            <img src="${post.image_url}" alt="Post photos" width="300" height="300"
                 class="w-full bg-cover">
             <div class="p-4">
                 <div class="flex justify-between text-2xl mb-3">
                     <div>
-                        <button><i class="far fa-heart"></i></button>
+                        ${getLikeButton(post)}
                         <button><i class="far fa-comment"></i></button>
                         <button><i class="far fa-paper-plane"></i></button>
                     </div>
@@ -62,24 +62,15 @@ function postsToHTML(post){
                         ${ getBookmarkButton(post)}
                     </div>
                 </div>
-                <p class="font-bold mb-3">30 likes</p>
+                <p class="font-bold mb-3">${post.likes.length} likes</p>
                 <div class="text-sm mb-3">
                     <p>
-                        <strong>gibsonjack</strong>
-                        Here is a caption about the photo.
-                        Text text text text text text text text text
-                        text text text text text text text text... <button class="button">more</button>
+                        <strong>${post.user.username}</strong>
+                        ${post.caption}<button class="button">more</button>
                     </p>
                 </div>
-                <p class="text-sm mb-3">
-                    <strong>lizzie</strong>
-                    Here is a comment text text text text text text text text.
-                </p>
-                <p class="text-sm mb-3">
-                    <strong>vanek97</strong>
-                    Here is another comment text text text.
-                </p>
-                <p class="uppercase text-gray-500 text-xs">1 day ago</p>
+                ${getComments(post)}
+                <p class="uppercase text-gray-500 text-xs">${post.display_time}</p>
             </div>
             <div class="flex justify-between items-center p-3">
                 <div class="flex items-center gap-3 min-w-[80%]">
@@ -92,6 +83,32 @@ function postsToHTML(post){
     `
 }
 
+function getComments(post) {
+    const comments = post.comments;
+    if (comments.length === 0) {
+        return ``;
+    }
+    if (comments.length === 1) {
+        const comment = comments[0];
+        return `
+            <p class="text-sm mb-3">
+                <strong>${comment.user.username}</strong>
+                ${comment.text}
+            </p>
+        `;
+    }
+    const lastComment = comments[comments.length - 1];
+    return `
+        <button class="text-sm text-gray-500 mb-2">
+            View all ${comments.length} comments
+        </button>
+        <p class="text-sm mb-3">
+            <strong>${lastComment.user.username}</strong>
+            ${lastComment.text}
+        </p>
+    `;
+}
+
 function getBookmarkButton(post) {
     if (post.current_user_bookmark_id !== undefined) {
         return `<button data-post-id="${post.id}" onclick="unBookmark(${post.current_user_bookmark_id}, this)">
@@ -102,6 +119,57 @@ function getBookmarkButton(post) {
                     <i class="far fa-bookmark"></i>
                 </button>`;
     }
+}
+
+function getLikeButton(post){
+    if (post.current_user_like_id !== undefined) {
+        return `
+            <button data-post-id="${post.id}" onclick="unLike(${post.current_user_like_id}, this)">
+                <i class="fas fa-heart" style="color: red;"></i>
+            </button>
+        `;
+    } else {
+        return `
+            <button data-post-id="${post.id}" onclick="like(${post.id}, this)">
+                <i class="far fa-heart"></i>
+            </button>
+        `;
+    }
+}
+
+async function like(postID, buttonEl){
+    const response = await fetch(`${rootURL}/api/likes/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ post_id: postID })
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    // update UI
+    buttonEl.innerHTML = '<i class="fas fa-heart" style="color: red;"></i>';
+    buttonEl.setAttribute("onclick", `unLike(${data.id}, this)`);
+}
+
+async function unLike(likeID, buttonEl){
+    const response = await fetch(`${rootURL}/api/likes/${likeID}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json"
+        }
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    // update UI
+    buttonEl.innerHTML = '<i class="far fa-heart"></i>';
+    buttonEl.setAttribute("onclick", `like(${buttonEl.dataset.postId}, this)`);
 }
 
 async function bookmark(postID, buttonEl){
@@ -137,6 +205,9 @@ async function unBookmark(bookmarkId, buttonEl) {
     buttonEl.setAttribute("onclick", `bookmark(${buttonEl.dataset.postId}, this)`);
 }
 
+
+
+
 async function getToken() {
     return await getAccessToken(rootURL, username, password);
 }
@@ -153,16 +224,4 @@ function showNav() {
     `;
 }
 
-// implement remaining functionality below:
-
-
-
-
-
-
-
-
-
-// after all of the functions are defined, 
-// invoke initialize at the bottom:
 initializeScreen();
