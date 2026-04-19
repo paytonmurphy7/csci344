@@ -1,0 +1,15 @@
+1. Three tables that correspond to the Resource types defined in api.config.yaml are Sneaker, Brand, Order, etc. Table that is not defined by YAML is users.
+2. Other data referenced in the sneakers columns include description, photo, user, etc.
+3. Optionsl fields have miscellaneous wording and pricing that isnt exactly accurate while Required field have ID numbers that correspond to each unique sneaker.
+
+4. Changing data with npm run seed allows it to actually transfer over into the app.db while if you just replace the content in the .csv files it only changes that specific field.
+5. You should run npm generate before npm seed if you edited a .yaml file to allow the .yaml file to match up the database and CSV resources.
+
+6. When I applied the filters in added a query like "?size=1".
+7. You would use /api/sneakers?name=running for s GET request that asks for shoes with the name "running".
+
+8. One difference in experimenting in /api/docs vs the data grid is that the api docs is more of a direct "in the server" type of work where you can actually see what is going on inside everything while data grid is more visual.
+
+9. An advantage of having a seperate PlantType resource instead of keeping it as species is that it allows for cleaner organization and easier/faster ediitng.
+
+10. For my final project I will use /api/characters, /api/anime, /api/personalities. Characters would hold the name, maybe what they look like, etc and can be queried by their name. Relationships will be between the characters and what animes they are from and also what characters have similar personalities.
