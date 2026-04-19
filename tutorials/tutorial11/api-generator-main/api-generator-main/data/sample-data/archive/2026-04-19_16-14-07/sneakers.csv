@@ -1,0 +1,6 @@
+name,brand,price,photo,size,is_available,description
+Sample name 1,1,12.99,https://picsum.photos/300/300?id=1,1,true,Sample description paragraph 1.
+Sample name 2,2,13.99,https://picsum.photos/300/300?id=2,2,false,Sample description paragraph 2.
+Sample name 3,3,14.99,https://picsum.photos/300/300?id=3,3,true,Sample description paragraph 3.
+Sample name 4,4,15.99,https://picsum.photos/300/300?id=4,4,false,Sample description paragraph 4.
+Sample name 5,5,16.99,https://picsum.photos/300/300?id=5,5,true,Sample description paragraph 5.

@@ -1,0 +1,183 @@
+{
+  "generatedAt": "2026-04-19T20:51:00.562Z",
+  "builtIns": {
+    "auth": [
+      {
+        "method": "POST",
+        "path": "/auth/register"
+      },
+      {
+        "method": "POST",
+        "path": "/auth/login"
+      },
+      {
+        "method": "GET",
+        "path": "/auth/me"
+      },
+      {
+        "method": "GET",
+        "path": "/auth/users"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "type": "PlantType",
+      "path": "/api/plant-types",
+      "shareable": false,
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/api/plant-types",
+          "permissions": "public",
+          "query": [
+            {
+              "name": "name",
+              "field": "name",
+              "op": "contains",
+              "type": "string",
+              "relationType": null
+            },
+            {
+              "name": "owner_id",
+              "field": "owner_id",
+              "op": "eq",
+              "type": "integer",
+              "relationType": null
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/api/plant-types/:id",
+          "permissions": "public"
+        },
+        {
+          "method": "POST",
+          "path": "/api/plant-types",
+          "permissions": "user"
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/plant-types/:id",
+          "permissions": "owner"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/plant-types/:id",
+          "permissions": "owner"
+        }
+      ]
+    },
+    {
+      "type": "Plant",
+      "path": "/api/plants",
+      "shareable": false,
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/api/plants",
+          "permissions": "public",
+          "query": [
+            {
+              "name": "name",
+              "field": "name",
+              "op": "contains",
+              "type": "string",
+              "relationType": null
+            },
+            {
+              "name": "image_url",
+              "field": "image_url",
+              "op": "contains",
+              "type": "image_url",
+              "relationType": null
+            },
+            {
+              "name": "plant_type",
+              "field": "plant_type",
+              "op": "eq",
+              "type": "integer",
+              "relationType": "PlantType"
+            },
+            {
+              "name": "owner_id",
+              "field": "owner_id",
+              "op": "eq",
+              "type": "integer",
+              "relationType": null
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/api/plants/:id",
+          "permissions": "public"
+        },
+        {
+          "method": "POST",
+          "path": "/api/plants",
+          "permissions": "user"
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/plants/:id",
+          "permissions": "owner"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/plants/:id",
+          "permissions": "owner"
+        }
+      ]
+    },
+    {
+      "type": "Comment",
+      "path": "/api/comments",
+      "shareable": false,
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/api/comments",
+          "permissions": "public",
+          "query": [
+            {
+              "name": "plant",
+              "field": "plant",
+              "op": "eq",
+              "type": "integer",
+              "relationType": "Plant"
+            },
+            {
+              "name": "owner_id",
+              "field": "owner_id",
+              "op": "eq",
+              "type": "integer",
+              "relationType": null
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/api/comments/:id",
+          "permissions": "public"
+        },
+        {
+          "method": "POST",
+          "path": "/api/comments",
+          "permissions": "user"
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/comments/:id",
+          "permissions": "owner"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/comments/:id",
+          "permissions": "owner"
+        }
+      ]
+    }
+  ]
+}

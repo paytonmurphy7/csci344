@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS plant_types (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  owner_id INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  description TEXT,
+  FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS plants (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  owner_id INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  image_url TEXT NOT NULL,
+  plant_type INTEGER NOT NULL,
+  planted_year INTEGER,
+  latitude REAL NOT NULL,
+  longitude REAL NOT NULL,
+  notes TEXT,
+  FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (plant_type) REFERENCES plant_types(id)
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  owner_id INTEGER NOT NULL,
+  body TEXT NOT NULL,
+  plant INTEGER NOT NULL,
+  FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (plant) REFERENCES plants(id)
+);
