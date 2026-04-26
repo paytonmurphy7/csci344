@@ -1,56 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>HW02 Starter Code</title>
+    <title>Photo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Navigation (Fixed) -->
+
     <header class="top-nav">
-        <h1 class="logo">
-            Photo App
-        </h1>
-        <nav>
-            fox_lover06 <span class="sign-out">Sign Out</span>
+        <h1 class="logo">Photo App</h1>
+        <nav class="user-nav">
+            fox_lover06 <a href="#" class="sign-out">Sign Out</a>
         </nav>
     </header>
-
-            <!-- Right Panel (Fixed) -->
-        <aside class="suggestions-panel">
-            <header>Username stuff</header>
-            <section>Suggestions for you</section>
-        </aside>
-
-    <!-- Main Panel Fixed -->
-    <main>
-        <section class="news-feed">
-            <!-- Story Section -->
+    <main class="main-container">
+        <section class="news-feed">   
             <header class="stories">
-                <!-- Stories Panel -->
-                <img class="story-1" src="https://r2.community.samsung.com/t5/image/serverpage/image-id/1033577i9BF90E7DC85500E1/image-size/large?v=v2&px=999" alt="profile picture">
+                <div class="story">
+                    <img src="https://randomwordgenerator.com/img/picture-generator/51e6d3424a57b10ff3d8992cc12c30771037dbf85254794e7d2d7bd2924d_640.jpg" alt="user">
+                    <p>gouldjennifer</p>
+                </div>
+                <div class="story">
+                    <img src="https://randompicturegenerator.com/img/dog-generator/g5d33df79829d9cfbba39903471d1cd1bc2d6cdd243e222607e337d5575cb76ed10582deda8ed10bb0d1c3c43a6494f5a_640.jpg" alt="user">
+                    <p>matthew16</p>
+                </div>
+                <div class="story">
+                    <img src="https://randompicturegenerator.com/img/car-generator/g3390161cfd4f0ef83b36447cfc716c0cd62a919f2f22a7ad6af5b697494c804c48312f297bc6d9dd81b5789c6110fbfa_640.jpg" alt="user">
+                    <p>sanchezjill</p>
+                </div>
+                <div class="story">
+                    <img src="https://randompicturegenerator.com/img/lion-generator/g5e39f127a43639b55a02d9b17f2dac790396e23bbfbaea8c6b9ffedce7c1a7fa7493d0e2d34fc6f2804e18252f85a148_640.jpg" alt="user">
+                    <p>gloria62</p>
+                </div>
+                <div class="story">
+                    <img src="https://randompicturegenerator.com/img/love-generator/gd467174fb5921d41b5f85459f8ebcc4bdeae56c6bd3fb116c60ca476d7f356f855d254452a6ccc620802eac0e31c1ab0_640.jpg" alt="user">
+                    <p>jwright</p>
+                </div>
             </header>
-            <!-- Posts -->
-            <section class="post">
-                Post 1
+            <section class="card">
+                <div class="card-header">
+                    <span class="username">gibsonjack</span>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <img src="https://randompicturegenerator.com/img/dog-generator/gb0d630707a6e7315eb3e953ce8ee70e22bf8590260d8535dfaec9518adf4abc7519b8491eab09f0040735cf33f161407_640.jpg" alt="Post" class="post-img">
+                <div class="card-content">
+                    <div class="icon-row">
+                        <div class="left-icons">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-comment"></i>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    <p class="likes">30 likes</p>
+                    <div class="caption">
+                        <p><strong>gibsonjack</strong> Here is a caption about the photo. Text text text.<span class="more">more</span></p>
+                    </div>
+                    <div class="comments">
+                        <p><strong>lizzie</strong> Here is a comment text text.</p>
+                        <p><strong>vanek97</strong> Here is another comment text text text.</p>
+                    </div>
+                    <p class="timestamp">1 DAY AGO</p>
+                </div>
+                <div class="add-comment-section">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Add a comment...">
+                    <button class="post-btn">Post</button>
+                </div>
+            </section><section class="card">
+                <div class="card-header">
+                    <span class="username"></span>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <img src="https://randompicturegenerator.com/img/dragon-generator/g0b7204ea044fdf4b41a159a04dc75afa70e8497e208ea6570628ee808206bde08ae403039c80328a9952f5656bf861ef_640.jpg" alt="Post" class="post-img">
+                <div class="card-content">
+                    <div class="icon-row">
+                        <div class="left-icons">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-comment"></i>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    <p class="likes">30 likes</p>
+                    <div class="caption">
+                        <p><strong>gibsonjack</strong> Here is a caption about the photo. Text text text.<span class="more">more</span></p>
+                    </div>
+                    <div class="comments">
+                        <p><strong>lizzie</strong> Here is a comment text text.</p>
+                        <p><strong>vanek97</strong> Here is another comment text text text.</p>
+                    </div>
+                    <p class="timestamp">1 DAY AGO</p>
+                </div>
+                <div class="add-comment-section">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Add a comment...">
+                    <button class="post-btn">Post</button>
+                </div>
+            </section><section class="card">
+                <div class="card-header">
+                    <span class="username">gibsonjack</span>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <img src="https://randompicturegenerator.com/img/flower-generator/g635319c98ba19e70e042a91c622f7eb21ba9b0ddbb1a361b4464c8dec7601c2a936653f37384329bb1a8953edbdc5830_640.jpg" alt="Post" class="post-img">
+                <div class="card-content">
+                    <div class="icon-row">
+                        <div class="left-icons">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-comment"></i>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    <p class="likes">30 likes</p>
+                    <div class="caption">
+                        <p><strong>gibsonjack</strong> Here is a caption about the photo. Text text text.<span class="more">more</span></p>
+                    </div>
+                    <div class="comments">
+                        <p><strong>lizzie</strong> Here is a comment text text.</p>
+                        <p><strong>vanek97</strong> Here is another comment text text text.</p>
+                    </div>
+                    <p class="timestamp">1 DAY AGO</p>
+                </div>
+                <div class="add-comment-section">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Add a comment...">
+                    <button class="post-btn">Post</button>
+                </div>
+            </section><section class="card">
+                <div class="card-header">
+                    <span class="username">gibsonjack</span>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <img src="https://randompicturegenerator.com/img/cat-generator/g38e923b770b02e3a33506128591a0d1f68bd51d9ce6477e157e753101d4ca85f249fd05fae2e854b76549d8c803c2198_640.jpg" alt="Post" class="post-img">
+                <div class="card-content">
+                    <div class="icon-row">
+                        <div class="left-icons">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-comment"></i>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                    <p class="likes">30 likes</p>
+                    <div class="caption">
+                        <p><strong>gibsonjack</strong> Here is a caption about the photo. Text text text.<span class="more">more</span></p>
+                    </div>
+                    <div class="comments">
+                        <p><strong>lizzie</strong> Here is a comment text text.</p>
+                        <p><strong>vanek97</strong> Here is another comment text text text.</p>
+                    </div>
+                    <p class="timestamp">1 DAY AGO</p>
+                </div>
+                <div class="add-comment-section">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Add a comment...">
+                    <button class="post-btn">Post</button>
+                </div>
             </section>
-            <section class="post">
-                Post 2
-            </section>
-            <section class="post">
-                Post 3
-            </section>
-            <section class="post">
-                Post 4
-            </section>
+
         </section>
+
+        <aside class="suggestions-panel">
+            <div class="current-user">
+                <img src="https://r2.community.samsung.com/t5/image/serverpage/image-id/1033577i9BF90E7DC85500E1/image-size/small?v=v2&px=999">
+                <p><strong>fox_lover06</strong></p>
+            </div>
+            <p class="suggestion-header">Suggestions for you</p>
+            <div class="suggestion-item">
+                <img src="https://randompicturegenerator.com/img/cat-generator/gda007dfd3569e971a73a4de6b678d1e76c73e9853e53ae99959a7bd15ad9776a67d3b3e6a907bfc656560c8f354dcf01_640.jpg">
+                <div class="user-info">
+                    <p class="username">amandahudson</p>
+                    <p class="reason">Suggested for you</p>
+                </div>
+                <a href="#" class="follow-link">follow</a>
+            </div>
+            </div>
+            
+            <div class="suggestion-item">
+                <img src="https://randompicturegenerator.com/img/cat-generator/g7e1c08504f676a43ef1b698935f46e6dc88cea5be9b2ced450d6524af00718587cc42a6533ff6001005e36d477a4e6cd_640.jpg">
+                <div class="user-info">
+                    <p class="username">qthornton</p>
+                    <p class="reason">Suggested for you</p>
+                </div>
+                <a href="#" class="follow-link">follow</a>
+            </div>
+            </div>
+            
+            <div class="suggestion-item">
+                <img src="https://randompicturegenerator.com/img/cat-generator/g9ea3ca2bfd45b753baa87780a8b59facab4e73bcd598e621e62f5c5e6863827f4527030f937c2f8c61ce3bae42726df9_640.jpg">
+                <div class="user-info">
+                    <p class="username">ynelson</p>
+                    <p class="reason">Suggested for you</p>
+                </div>
+                <a href="#" class="follow-link">follow</a>
+            </div>
+            </div>            
+            <div class="suggestion-item">
+                <img src="https://randompicturegenerator.com/img/cat-generator/gffdf6fe2856fe4f81b3c44766235e10cf99cb6de5740c150d01c6f790049709f631c156929132c867f3e2bc782853b24_640.jpg">
+                <div class="user-info">
+                    <p class="username">lauralyons</p>
+                    <p class="reason">Suggested for you</p>
+                </div>
+                <a href="#" class="follow-link">follow</a>
+            </div>            <div class="suggestion-item">
+                <img src="https://randompicturegenerator.com/img/cat-generator/g3b3105cc484ab70ec18940a9a4cf03a91b0b8625ecda86f3a25c178dd03c8cc0e0ff7ed53869550ba6517c2ee8cdcf40_640.jpg">
+                <div class="user-info">
+                    <p class="username">robertsonkristen</p>
+                    <p class="reason">Suggested for you</p>
+                </div>
+                <a href="#" class="follow-link">follow</a>
+            </div>
+            </aside>
     </main>
+
 </body>
-
 </html>
-
-<!-- dfovns -->
