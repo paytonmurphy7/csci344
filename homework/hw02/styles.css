@@ -94,7 +94,6 @@ body {
 .add-comment-section input { flex-grow: 1; border: none; outline: none; }
 .post-btn { background: none; border: none; color: #0095f6; font-weight: bold; }
 
-/* 5. Suggestions Panel - Fixed/Sticky on right */
 .suggestions-panel { width: 300px; }
 
 .suggestion-item {
